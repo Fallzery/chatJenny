@@ -4,8 +4,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hello world</title>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<h1>Hello world</h1>
+	<div class="fullscreen-bg">
+		<!-- <div class="bg-top"></div> -->
+		<div class="bg_bottom"></div>
+	</div>
+	<!-- <div class="bg_right_bottom"></div> -->
 </body>
-</html>>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var screenWidth = $(window).width();
+		var screenHeight = $(window).height();
+		// console.log("screenWidth->"+screenWidth)
+		// console.log("screenHeight->"+screenHeight)
+		$("#bg_bottom").css("width",screenWidth)
+		$("#bg_bottom").css("height",screenHeight)
+	});
+</script>
+</html>

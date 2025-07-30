@@ -1,0 +1,18 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+ 
+/*.fullscreen-bg {
+    background: white;
+    z-index: -1;
+}*/
+.bg_bottom{
+    position: absolute;
+    bottom: 0;
+    height: ;
+    background-image: url('../images/chatJenny_bg_07.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
