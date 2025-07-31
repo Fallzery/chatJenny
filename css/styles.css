@@ -8,11 +8,9 @@ body, html {
     background: white;
     z-index: -1;
 }*/
-.bg_bottom{
-    position: absolute;
-    bottom: 0;
-    height: ;
-    background-image: url('../images/chatJenny_bg_07.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+.bg_image{
+   position: absolute;
+   top:0;
+   height: auto;
+   width: 100%;
 }
