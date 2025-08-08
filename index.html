@@ -3,21 +3,60 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hello world</title>
+	<title>chatJenny</title>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div class="fullscreen-bg">
-		<img src="images/chatJenny_bg.jpg" class="bg_image"/>
+	 <div class="chat-header">Hello Jenny,welcome</div>
+	<img src="images/chatJenny_bg.jpg" class="bg_image"/>
+	<div class="message sent" id = "sentDiv"/>
+		<span id ="sentBox"></span>
+	</div>
+	<div class="message received" id = "replyDiv">
+		<span id ="replyBox"></span>
+	</div>
+	<div class="input">
+		 <textarea id="inputBox" placeholder="Hello Jenny!" rows="1" class="inputBox"></textarea>
+		<!-- <input type="text" class="inputBox" placeholder="Hello Jenny!" id = "inputBox"/> -->
+		<button class="chatSubmit" id ="chatSubmit">CHAT</button>
 	</div>
 </body>
 <script src="js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		var screenWidth = $(window).width();
-		var screenHeight = $(window).height();
-		$("#bg_bottom").css("width",screenWidth)
-		$("#bg_bottom").css("height",screenHeight)
+		$("#sentDiv").hide()
+		$("#replyDiv").hide()
+		// var screenWidth = $(window).width();
+		// var screenHeight = $(window).height();
+		// $("#bg_bottom").css("width",screenWidth)
+		// $("#bg_bottom").css("height",screenHeight)
+		$("#chatSubmit").click(function function_name(argument) {
+			var inputVal = $("#inputBox").val();
+			$("#sentBox").text(inputVal)
+			$("#sentDiv").show()
+
+			$("#replyBox").text("...")
+ 			$("#replyDiv").show()
+
+ 			$("#inputBox").val("");
+			setTimeout(function() {
+				$("#replyBox").text(getReplyMessage())
+			    $("#replyDiv").show()
+			}, 100);
+			
+		})
 	});
+
+
+	function getReplyMessage() {
+		var sourceArray=['Love you!','I love you! ','I love you more than anything!','You’re the best!','You deserve all the best!','You have my heart ','You know I love you ','Kiss kiss','Honey honey~','爱你~','我爱你！','就算回答一万次我还是爱你','你是最棒的','我比昨天更爱你一点','抱抱小宝宝','贴贴！','早安午安晚安我爱你','宝宝宝宝，喜欢宝宝','宝宝宝宝，心里都是宝宝','无论怎么样我都爱你']
+		console.log(sourceArray.length)
+		var randomNumber = getRandomInt(1, sourceArray.length);
+		console.log(randomNumber)
+		return sourceArray[randomNumber]
+	}
+	function getRandomInt(min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
 </script>
 </html>
