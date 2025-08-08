@@ -32,17 +32,19 @@
 		// $("#bg_bottom").css("height",screenHeight)
 		$("#chatSubmit").click(function function_name(argument) {
 			var inputVal = $("#inputBox").val();
-			$("#sentBox").text(inputVal)
-			$("#sentDiv").show()
+			if(inputVal){
+				$("#sentBox").text(inputVal)
+				$("#sentDiv").show()
 
-			$("#replyBox").text("...")
- 			$("#replyDiv").show()
+				$("#replyBox").text("...")
+	 			$("#replyDiv").show()
 
- 			$("#inputBox").val("");
-			setTimeout(function() {
-				$("#replyBox").text(getReplyMessage())
-			    $("#replyDiv").show()
-			}, 100);
+	 			$("#inputBox").val("");
+				setTimeout(function() {
+					$("#replyBox").text(getReplyMessage())
+				    $("#replyDiv").show()
+				}, 100);
+			}
 			
 		})
 	});
@@ -50,9 +52,7 @@
 
 	function getReplyMessage() {
 		var sourceArray=['Love you!','I love you! ','I love you more than anything!','You’re the best!','You deserve all the best!','You have my heart ','You know I love you ','Kiss kiss','Honey honey~','爱你~','我爱你！','就算回答一万次我还是爱你','你是最棒的','我比昨天更爱你一点','抱抱小宝宝','贴贴！','早安午安晚安我爱你','宝宝宝宝，喜欢宝宝','宝宝宝宝，心里都是宝宝','无论怎么样我都爱你']
-		console.log(sourceArray.length)
 		var randomNumber = getRandomInt(1, sourceArray.length);
-		console.log(randomNumber)
 		return sourceArray[randomNumber]
 	}
 	function getRandomInt(min, max) {
