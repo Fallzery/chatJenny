@@ -16,7 +16,7 @@ body, html {
    font-size: 20px;
    text-align: left;
    border-radius: 9px;
-   width: 70%;
+   width: 75%;
    height: 3rem;
    border: 5px dashed black;
    word-wrap: break-word;
@@ -37,7 +37,8 @@ body, html {
 /* 消息气泡基础样式 */
 .message {
    max-width: 80%;
-   margin-top: 8px;
+   min-width: 100px;
+   /*margin-top: 8px;*/
    padding: 12px 18px;
    border-radius: 18px;
    line-height: 1.5;
@@ -76,4 +77,48 @@ body, html {
   border-radius: 3px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
   z-index: 100;
+}
+
+.short {
+   min-width: auto;
+   border-radius: 18px;
+   padding: 12px 18px;
+}
+.chat-messages {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #f9fbff;
+}
+/* 滚动条美化 */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(91, 124, 250, 0.4);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(91, 124, 250, 0.6);
+}
+.sendImages{
+  position: absolute;
+   bottom: 0.5rem;
+   right: 0.5rem;
+   border-radius: 100%;
+   width: 4rem;
+   height: 4rem;
+   /*border: 5px dashed black;*/
+   border: 0;
+   background-color: whitesmoke;
 }
