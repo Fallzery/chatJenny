@@ -14,9 +14,6 @@ function sendMessage() {
 }
 
 function addMessage(text, type) {
-    const now = new Date();
-    const timeString = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
-            
     const messageElement = document.createElement('div');
     messageElement.className = `message ${type}`;
     if (text.length < 20) {
@@ -33,7 +30,7 @@ function addMessage(text, type) {
 
 function getReplyMessage() {
 	var sourceArray=['Love you!','I love you! ','I love you more than anything!','You’re the best!','You deserve all the best!','You have my heart ','You know I love you ','Kiss kiss','Honey honey~','爱你~','我爱你！','就算回答一万次我还是爱你','你是最棒的','我比昨天更爱你一点','抱抱小宝宝','贴贴！','早安午安晚安我爱你','宝宝宝宝，喜欢宝宝','宝宝宝宝，心里都是宝宝','无论怎么样我都爱你']
-	var randomNumber = getRandomInt(1, sourceArray.length);
+	var randomNumber = getRandomInt(0, sourceArray.length-1);
 	return sourceArray[randomNumber]
 }
 
